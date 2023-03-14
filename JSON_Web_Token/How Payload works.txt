@@ -1,0 +1,10 @@
+Payload:
+         Yes, the payload of a JSON Web Token (JWT) is encoded as a Base64Url string before it is signed.
+
+Base64Url encoding is a variant of the Base64 encoding scheme that is URL-safe and does not contain characters that may be interpreted as special characters in URLs. The encoding process involves replacing the characters "+", "/", and "=" with "-", "_", and "" (an empty string) respectively.
+
+The payload of a JWT typically consists of a JSON object containing various claims or pieces of information about the user or entity being authenticated. These claims are represented as key-value pairs in the JSON object.
+
+Before the payload is signed, it is serialized as a JSON string and then encoded using Base64Url encoding. The resulting Base64Url-encoded string is then used as part of the JWT's signature.
+
+When the JWT is received and needs to be verified, the payload is first decoded from Base64Url encoding to obtain the original JSON object. The signature can then be verified using the payload and the same secret key or public key that was used to sign the JWT.

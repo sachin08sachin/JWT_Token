@@ -1,0 +1,26 @@
+COOKIES:
+         Cookies are small pieces of data that are stored on the user's computer by the web browser. They are typically used to remember information about the user, such as login credentials or site preferences. Cookies can be set to expire after a certain period of time or when the user closes their browser.
+
+SESSION:
+          Sessions are a way to track user activity on the server side. When a user logs into a web application, a session is created on the server to store information about the user and their activity. This information can include login credentials, session IDs, and other data that is needed to maintain the user's state.
+
+TOKEN:
+          Tokens are used to authenticate users and verify their identity. When a user logs into a web application, a token is generated that contains information about the user and their permissions. This token is then used to authenticate the user for subsequent requests to the application. Tokens are typically stored on the client side, either in local storage or in a cookie.
+
+OVERALL SUMMARY:
+            In summary, cookies are used to store data on the client side, sessions are used to track user activity on the server side, and tokens are used for authentication and authorization.
+
+AUTHENTICATION:
+          Authentication is the process of verifying that identity of a person
+          who the user is
+AUTHORIZATION:
+          Authorization is the function of specifying access rights or privileges to resources
+          what the user can access.        
+JWT OVERVIEW:
+             A JWT (JSON Web Token) is a type of token used in web applications for authentication and authorization purposes. It is a compact, URL-safe means of representing claims to be transferred between two parties.
+
+A JWT token consists of three parts: a header, a payload, and a signature. The header contains information about the token, such as the algorithm used to sign it. The payload contains the claims, which are statements about an entity (typically, the user) and additional data. The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way.
+
+JWT tokens are often used for authentication purposes in web applications. When a user logs in, the server generates a JWT token and sends it back to the client. The client then includes the token in subsequent requests to the server, typically in the Authorization header. The server can then verify the token and use the information in the payload to determine whether the user is authorized to perform the requested action.
+
+JWT tokens have several advantages over traditional session-based authentication methods. First, they are stateless, meaning that the server does not need to maintain session state for each user. This can make it easier to scale the application and handle high traffic. Second, because the token is self-contained, it can be easily passed between different parts of the application or even between different applications. Finally, because the token is signed, it provides a way to verify the authenticity of the user and protect against tampering.
