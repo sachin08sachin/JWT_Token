@@ -45,6 +45,19 @@ JWT, on the other hand, is a stateless authentication mechanism that does not re
 On subsequent requests, the client sends the JWT token back to the server in the authorization header of the HTTP request. The server then verifies the token to determine if the user is authenticated and authorized to access the requested resource. If the token is valid, the server sends the requested resource back to the client.  
 
      In summary, JWT differs from session-based authentication in that it is stateless, lightweight, and portable. It allows for efficient and secure authentication and authorization of users, without the need for server-side storage of session data.
+     
+     JWT is used at internet scale means?
+     
+                       Yes, JWT is widely used at internet scale, meaning that it is used to secure web applications and APIs that are accessed by millions of users over the internet. JWT has become popular because it is lightweight, stateless, and can be used to authenticate and authorize users across different domains and platforms.
+
+                        Many large companies, including Google, Microsoft, and Amazon, use JWT to secure their APIs and web applications. JWT is also used in open-source projects, such as OAuth 2.0 and OpenID Connect, which are used for secure authentication and authorization in web applications and APIs.
+
+                        One of the main advantages of JWT for internet-scale authentication and authorization is that it allows for efficient and secure communication between different systems and platforms. JWT tokens are self-contained and can be easily passed between different systems and programming languages, which makes it easier to implement authentication in different parts of an application or even in different applications altogether.
+
+                        Additionally, JWT's stateless nature allows it to scale well and handle large numbers of concurrent users, which is important for internet-scale applications that need to serve millions of users simultaneously.
+
+                        Overall, JWT has become a popular choice for securing web applications and APIs at internet scale due to its lightweight, stateless, and portable nature, as well as its ability to provide efficient and secure authentication and authorization across different domains and platforms.
+
 
 
 
