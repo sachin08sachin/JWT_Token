@@ -66,9 +66,12 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
 <p>In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned. Since tokens are credentials, great care must be taken to prevent security issues. In general, you should not keep tokens longer than required.</p>
 <p>You also <i> should not store sensitive session data in browser storage due to lack of security.</i></p>
 <p>Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the <b>Authorization</b> header using the <b>Bearer</B> schema. The content of the header should look like the following:</p>
-<code>
-  Authorization: Bearer <token>
-</code>
+                                          
+                               <pre ><code> 
+                                           Authorization: Bearer <token>
+</code></pre> 
+              <p> Use Authorization : Bearer and then add token within "< >"</p>                                    
+
   <p>This can be, in certain cases, a stateless authorization mechanism. The server's protected routes will check for a valid JWT in the <b>Authorization</b> header, and if it's present, the user will be allowed to access protected resources. If the JWT contains the necessary data, the need to query the database for certain operations may be reduced, though this may not always be the case.</p>
     <p>
     Note that if you send JWT tokens through HTTP headers, you should try to prevent them from getting too big. Some servers don't accept more than 8 KB in headers. If you are trying to embed too much information in a JWT token, like by including all the user's permissions, you may need an alternative solution, like <em>Auth0 Fine-Grained Authorization</em>.
@@ -81,6 +84,8 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
     <p>As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.</p>
     <p>Security-wise, SWT can only be symmetrically signed by a shared secret using the HMAC algorithm. However, JWT and SAML tokens can use a public/private key pair in the form of a X.509 certificate for signing. Signing XML with XML Digital Signature without introducing obscure security holes is very difficult when compared to the simplicity of signing JSON.</p>
     <p>JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.</p>
-    <em>Regarding usage, JWT is used at Internet scale. This highlights the ease of client-side processing of the JSON Web token on multiple platforms, especially mobile.</em>
+   <b> <em>Regarding usage, JWT is used at Internet scale. This highlights the ease of client-side processing of the JSON Web token on multiple platforms, especially mobile.</em> </b> 
+   <br>
+</br>   <img src="SAML.png"/>
     
     
