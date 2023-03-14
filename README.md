@@ -61,3 +61,16 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
 <b>Putting all together</b>
 <p>The output is three Base64-URL strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact when compared to XML-based standards such as SAML.</P>
 <p>The following shows a JWT that has the previous header and payload encoded, and it is signed with a secret. </P>
+<img src="JWT.png"  />
+<h2>How do JSON Web Tokens work?</h2>
+<p>In authentication, when the user successfully logs in using their credentials, a JSON Web Token will be returned. Since tokens are credentials, great care must be taken to prevent security issues. In general, you should not keep tokens longer than required.</p>
+<p>You also <i> should not store sensitive session data in browser storage due to lack of security.</i></p>
+<p>Whenever the user wants to access a protected route or resource, the user agent should send the JWT, typically in the <b>Authorization</b> header using the <b>Bearer</B> schema. The content of the header should look like the following:</p>
+<code>
+  Authorization: Bearer <token>
+</code>
+  <p>This can be, in certain cases, a stateless authorization mechanism. The server's protected routes will check for a valid JWT in the <b>Authorization</b> header, and if it's present, the user will be allowed to access protected resources. If the JWT contains the necessary data, the need to query the database for certain operations may be reduced, though this may not always be the case.</p>
+    <p>
+    Note that if you send JWT tokens through HTTP headers, you should try to prevent them from getting too big. Some servers don't accept more than 8 KB in headers. If you are trying to embed too much information in a JWT token, like by including all the user's permissions, you may need an alternative solution, like <em>Auth0 Fine-Grained Authorization</em>.
+    </p>
+    <p>If the token is sent in the <b>Authorization</b> header, Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.</p>
