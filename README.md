@@ -89,4 +89,5 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
 </br>   <img src="SAML.png"/>
     <h2>How JWT is useful?</h2>
     <p>JSON Web Tokens (JWTs) are useful in client-side applications because they allow for secure and authenticated communication between the client and the server without the need for a user to continually log in with each request. JWTs are also portable, meaning they can be used across <em>different platforms and languages, making them a flexible choice for modern web development</em>.</p>
+    <h3>Refer (installation): <a href="https://www.npmjs.com/package/jsonwebtoken">NPM</a></h3><p>click on NPM to get more info</p>
     
