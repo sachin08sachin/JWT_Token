@@ -74,3 +74,13 @@ For example if you want to use the HMAC SHA256 algorithm, the signature will be 
     Note that if you send JWT tokens through HTTP headers, you should try to prevent them from getting too big. Some servers don't accept more than 8 KB in headers. If you are trying to embed too much information in a JWT token, like by including all the user's permissions, you may need an alternative solution, like <em>Auth0 Fine-Grained Authorization</em>.
     </p>
     <p>If the token is sent in the <b>Authorization</b> header, Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.</p>
+    <img src="Auth0.png"/>
+    <p>Do note that with signed tokens, all the information contained within the token is exposed to users or other parties, even though they are unable to change it. This means you should not put secret information within the token.</p>
+    <h2>Why should we use JSON Web Tokens?</h2>
+    <p>Let's talk about the benefits of <strong>JSON Web Tokens (JWT)</strong> when compared to <strong>Simple Web Tokens (SWT)</strong> and<strong> Security Assertion Markup Language Tokens (SAML)</strong>.</p>
+    <p>As JSON is less verbose than XML, when it is encoded its size is also smaller, making JWT more compact than SAML. This makes JWT a good choice to be passed in HTML and HTTP environments.</p>
+    <p>Security-wise, SWT can only be symmetrically signed by a shared secret using the HMAC algorithm. However, JWT and SAML tokens can use a public/private key pair in the form of a X.509 certificate for signing. Signing XML with XML Digital Signature without introducing obscure security holes is very difficult when compared to the simplicity of signing JSON.</p>
+    <p>JSON parsers are common in most programming languages because they map directly to objects. Conversely, XML doesn't have a natural document-to-object mapping. This makes it easier to work with JWT than SAML assertions.</p>
+    <em>Regarding usage, JWT is used at Internet scale. This highlights the ease of client-side processing of the JSON Web token on multiple platforms, especially mobile.</em>
+    
+    
